@@ -1,0 +1,12 @@
+spring:
+  application:
+    name: consumerdemo
+server:
+  port: 9091  #端口为该工程启动使用端口
+
+eureka:
+  instance:
+    prefer-ip-address: true # 注册服务的时候使用服务的ip地址
+  client:
+    service-url:
+      defaultZone: http://localhost:9600/eureka/ #注册中心默认节点(端口为注册中心端口)
