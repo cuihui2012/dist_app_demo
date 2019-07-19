@@ -1,4 +1,4 @@
-# demoapp
+# dist_app_demo
 SpringBoot+SpringCloud+SpringMVC+Maven+Oracle+MyBatis+Redis+eureka(注册中心)
 jdk--1.8.0_152
 maven--3.6.0
