@@ -19,14 +19,14 @@ public class UserController {
     @Autowired
     private RedisUtil redisUtil;
 
-    @RequestMapping(value = "/findAll")
+    @RequestMapping(value = "/findAll", method = RequestMethod.GET)
     public List<User> queryList(){
         ////////////////////////////////测试key过期是否被监听到///////////////////////////////
         //redis工具类使用demo
-        boolean flag = redisUtil.set("cuihui","cuihuitest",(long)5);
-        System.out.println("设置key成功标识----->" + flag);
-        String value = (String) redisUtil.get("cuihui");
-        System.out.println("获取key结果---->" + value);
+//        boolean flag = redisUtil.set("cuihui","cuihuitest",(long)5);
+//        System.out.println("设置key成功标识----->" + flag);
+//        String value = (String) redisUtil.get("cuihui");
+//        System.out.println("获取key结果---->" + value);
         /////////////////////////////////////////////////////////////////////////////////////
         return userService.queryList();
     }

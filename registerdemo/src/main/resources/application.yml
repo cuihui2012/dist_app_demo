@@ -1,3 +1,4 @@
+#非集群时使用
 spring:
   application:
     name: registerdemo

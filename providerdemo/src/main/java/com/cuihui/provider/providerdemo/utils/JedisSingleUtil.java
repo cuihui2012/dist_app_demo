@@ -1,4 +1,4 @@
-package com.cuihui.provider.providerdemo.utils.pubsub;
+package com.cuihui.provider.providerdemo.utils;
 
 import com.google.gson.Gson;
 import org.apache.log4j.Logger;
@@ -41,6 +41,23 @@ public final class JedisSingleUtil {
         Jedis jedis = getJedisConn();
         try {
             jedis.set(key, val == null ? "" : val);
+        } catch (Exception e) {
+            logger.error(e.getMessage());
+        } finally {
+            jedis.close();
+        }
+    }
+
+    /**
+     * 设置key并设置过期时间
+     * @param key
+     * @param val
+     * @param seconds
+     */
+    public static void set(String key, String val, int seconds) {
+        Jedis jedis = getJedisConn();
+        try {
+            jedis.setex(key,seconds, val == null ? "" : val);
         } catch (Exception e) {
             logger.error(e.getMessage());
         } finally {
@@ -114,11 +131,6 @@ public final class JedisSingleUtil {
      * @param args
      */
     public static void main(String args[]) {
-        JedisPool pool = new JedisPool(new JedisPoolConfig(), "localhost");
-
-        Jedis jedis = pool.getResource();
-        jedis.auth("since2012");
-        jedis.set("cuihui", "ccccccccccccccccccccccccccc");
-        jedis.expire("cuihui", 10);
+        JedisSingleUtil.set("cuihui","ccccccccccccccccccccccccccc",10);
     }
 }

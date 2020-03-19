@@ -21,7 +21,7 @@ public class UserService implements IUserService {
 
     @Override
     //使用缓存,存入redis数据库,value::key组成redis数据库的key
-    @Cacheable(value = "queryListCache",key = "'user.queryList'")
+//    @Cacheable(value = "queryListCache",key = "'user.queryList'")
     public List<User> queryList() {
         System.out.println("执行去数据库查询的方法。");
         return userDao.queryList();

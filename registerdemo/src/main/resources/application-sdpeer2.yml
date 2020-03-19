@@ -1,0 +1,21 @@
+spring:
+  application:
+    name: registerdemo
+server:
+  port: 8082 #注册中心访问端口
+
+eureka:
+  instance:
+    hostname: sdpeer2 #服务运行的宿主机的名称
+  client:
+    register-with-eureka: true #将自己注册到别的服务器
+    fetch-registry: true #去注册中心获取其他服务地址
+    service-url:
+      defaultZone: http://admin:admin@sdpeer1:8081/eureka,http://admin:admin@sdpeer3:8083/eureka #同时向sdpeer1/sdpeer3中的Eureka服务器注册
+#Eureka服务器页面添加用户密码认证
+security:
+  basic:
+    enabled: true
+  user:
+    name: admin
+    password: admin
