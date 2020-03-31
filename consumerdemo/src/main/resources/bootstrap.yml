@@ -1,0 +1,18 @@
+#端口为该工程启动使用端口
+server:
+  port: 8091
+#应用名称，配置服务器会根据该名称查找相应的配置文件
+spring:
+  application:
+    name: consumerdemo
+  cloud:
+    config:
+      uri: http://localhost:8888/  #配置服务器地址,localhost换成配置中心服务名不成功,尚不知原因？？？
+      profile: default  #profile文件
+      username: admin #配置中心用户名
+      password: admin #配置中心密码
+      fail-fast: true #连接不到配置服务器快速返回失败
+
+#对称解密秘钥,与配置服务端相对应
+encrypt:
+  key: since2012

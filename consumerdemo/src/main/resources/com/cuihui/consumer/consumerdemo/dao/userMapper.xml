@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.cuihui.consumer.consumerdemo.dao.IUserDao">
+    <resultMap id="userBean" type="user">
+        <result property="uuid" column="uuid"/>
+        <result property="uname" column="uname"/>
+        <result property="age" column="age"/>
+    </resultMap>
+    <!-- 查找用户列表 -->
+    <select id="queryList" resultMap="userBean">
+        select 
+              t.uuid,
+              t.uname,
+              t.age
+        from user_test t
+    </select>
+</mapper>

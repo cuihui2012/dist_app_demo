@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.cuihui.config</groupId>
+    <artifactId>configdemo</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <name>configdemo</name>
+    <description>configdemo for Spring Boot</description>
+
+    <parent>
+        <groupId>com.cuihui</groupId>
+        <artifactId>parentdemo</artifactId>
+        <version>0.0.1-SNAPSHOT</version>
+        <relativePath>../parentdemo/pom.xml</relativePath>
+    </parent>
+
+    <properties>
+        <es-version>5.6.3</es-version>
+    </properties>
+
+    <dependencies>
+        <!-- 配置服务器 -->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-config-server</artifactId>
+        </dependency>
+
+        <!-- 将配置服务注册到eureka -->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-eureka</artifactId>
+        </dependency>
+
+        <!-- 配置中心增加用户名/密码认证 -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-security</artifactId>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
+</project>

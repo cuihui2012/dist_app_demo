@@ -10,6 +10,16 @@ public class User implements Serializable {
     private String age;
     //服务端口,区分集群服务
     private int serverPort;
+    //微服务标识
+    private String desc = "服务提供者的服务";
+
+    public String getDesc() {
+        return desc;
+    }
+
+    public void setDesc(String desc) {
+        this.desc = desc;
+    }
 
     public int getServerPort() {
         return serverPort;
@@ -23,7 +33,7 @@ public class User implements Serializable {
         return uuid;
     }
 
-    public void setUid(String uuid) {
+    public void setUuid(String uuid) {
         this.uuid = uuid;
     }
 
@@ -46,9 +56,11 @@ public class User implements Serializable {
     @Override
     public String toString() {
         return "User{" +
-                "uid='" + uuid + '\'' +
+                "uuid='" + uuid + '\'' +
                 ", uname='" + uname + '\'' +
                 ", age='" + age + '\'' +
+                ", serverPort=" + serverPort +
+                ", desc='" + desc + '\'' +
                 '}';
     }
 }

@@ -1,0 +1,21 @@
+spring:
+  application:
+    name: registerdemo
+server:
+  port: 10002 #注册中心访问端口
+
+eureka:
+  instance:
+    hostname: register2 #服务运行的宿主机的名称
+  client:
+    register-with-eureka: true #将自己注册到别的服务器
+    fetch-registry: true #去注册中心获取其他服务地址
+    service-url:
+      defaultZone: http://admin:admin@register1:10001/eureka,http://admin:admin@register3:10003/eureka #同时向register1/register3中的Eureka服务器注册
+#Eureka服务器页面添加用户密码认证
+security:
+  basic:
+    enabled: true
+  user:
+    name: admin
+    password: admin

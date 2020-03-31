@@ -3,6 +3,8 @@ package com.cuihui.provider.providerdemo.service.impl;
 import com.cuihui.provider.providerdemo.dao.IUserDao;
 import com.cuihui.provider.providerdemo.model.User;
 import com.cuihui.provider.providerdemo.service.IUserService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.cache.annotation.Cacheable;
@@ -16,6 +18,8 @@ import java.util.Map;
 @Service
 public class UserService implements IUserService {
 
+    private Logger logger = LoggerFactory.getLogger(UserService.class);
+
     @Autowired
     private IUserDao userDao;
 
@@ -23,7 +27,7 @@ public class UserService implements IUserService {
     //使用缓存,存入redis数据库,value::key组成redis数据库的key
 //    @Cacheable(value = "queryListCache",key = "'user.queryList'")
     public List<User> queryList() {
-        System.out.println("执行去数据库查询的方法。");
+        logger.info("执行去数据库查询的方法。");
         return userDao.queryList();
     }
 
