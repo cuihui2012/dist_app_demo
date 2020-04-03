@@ -14,3 +14,5 @@ eureka:
     fetch-registry: false #注册中心不能把自己注册进去
     service-url:
       defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka #注册中心默认节点
+logging:
+  config: classpath:logback-spring.xml #读取日志配置文件

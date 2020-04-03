@@ -19,3 +19,5 @@ security:
   user:
     name: admin
     password: admin
+logging:
+  config: classpath:logback-spring.xml #读取日志配置文件
