@@ -8,12 +8,14 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.Map;
 
 @RestController
+@RefreshScope
 @RequestMapping("/provider")
 public class UserController {
 
@@ -68,12 +70,14 @@ public class UserController {
 
     @RequestMapping(value = "/getConfigValue", method = RequestMethod.GET)
     public String getConfigValue(){
-        System.out.println("user------>" + user);
-        System.out.println("password------>" + password);
-        System.out.println("datasourceUrl------>" + datasourceUrl);
-        System.out.println("dev------>" + dev);
-        System.out.println("test------>" + test);
-        System.out.println("nodeIP------>" + nodeIP);
-        return null;
+        logger.info("测试配置文件加载开始");
+        String userStr = "user------>" + user;
+        String passwordStr = "password------>" + password;
+        String datasourceUrlStr = "datasourceUrl------>" + datasourceUrl;
+        String devStr = "dev------>" + dev;
+        String testStr = "test------>" + test;
+        String nodeIPStr = "nodeIP------>" + nodeIP;
+        String result = userStr + "<br/>" + passwordStr + "<br/>" + datasourceUrlStr + "<br/>" + devStr + "<br/>" + testStr + "<br/>" + nodeIPStr;
+        return result;
     }
 }

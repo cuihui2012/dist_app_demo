@@ -34,9 +34,15 @@
         </dependency>
 
         <!-- 配置中心增加用户名/密码认证 -->
-        <dependency>
+        <!--<dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-security</artifactId>
+        </dependency>-->
+
+        <!-- 使用Spring Cloud Bus 和RabbitMQ实现配置文件刷新 -->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-bus-amqp</artifactId>
         </dependency>
     </dependencies>
 

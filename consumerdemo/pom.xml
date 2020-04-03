@@ -160,5 +160,15 @@
             <version>1.7.25</version>
             <scope>compile</scope>
         </dependency>
+
+        <!-- 使用Spring Cloud Bus 和RabbitMQ实现配置文件刷新 -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-bus-amqp</artifactId>
+        </dependency>
     </dependencies>
 </project>
