@@ -4,6 +4,8 @@
 ##需要export PROJ_PATH=jenkins任务在部署机器上的路径,已在任务中的shell脚本上配置
 
 ##编译
-cd $PROJ_PATH/dist_app_demo/parentdemo
+cd $PROJ_PATH/app_demo
 mvn clean install -DskipTests
-##war包部署##重启docker容器
+##war包部署
+cd
+##重启docker容器
