@@ -8,4 +8,6 @@ cd $PROJ_PATH/app_demo
 mvn clean install -DskipTests
 ##war包部署
 
+
+
 ##重启docker容器
