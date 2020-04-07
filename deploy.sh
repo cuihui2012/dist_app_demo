@@ -6,6 +6,4 @@
 ##编译
 cd $PROJ_PATH/dist_app_demo/parentdemo
 mvn clean install -DskipTests
-##war包部署
-
-##重启docker容器
+##war包部署##重启docker容器
