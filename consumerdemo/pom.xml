@@ -15,7 +15,7 @@
     <description>consumerdemo for Spring Boot</description>
 
     <properties>
-        <es-version>5.6.3</es-version>
+        <es-version>7.11.2</es-version>
     </properties>
     <dependencies>
         <!--SpringCloud+eureka注册中心-->
